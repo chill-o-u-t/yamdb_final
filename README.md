@@ -2,7 +2,6 @@
 ## База отзывов пользователей о фильмах, музыке и книгах
 ## Стек технологий: Python 3, Django REST Framework, PostgreSQL, Simple-JWT, NGINX, Docker, flake, pytest
 ### Проект развернут на http://yatube.ps-card.ru/admin
-### Документация http://yatube.ps-card.ru/redoc/
 ### Статус workflow: 
 ![example workflow](https://github.com/chill-o-u-t/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ____
@@ -24,9 +23,7 @@ ____
 ```docker-compose exec web python manage.py makemigrations``` \
 ```docker-compose exec web python manage.py migrate``` 
 
-### Создать суперпользователя:
-```docker-compose exec web python manage.py createsuperuser```
-#### для windows 
+### Создать суперпользователя для windows :
 ```winpty docker-compose exec web python manage.py createsuperuser```
 
 ### Информация об образе на Dockerhub
