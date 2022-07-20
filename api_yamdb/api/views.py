@@ -1,49 +1,24 @@
 from django.db import IntegrityError
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
-from django_filters.rest_framework import DjangoFilterBackend
 from django.utils.crypto import get_random_string
-from rest_framework.decorators import (
-    api_view,
-    permission_classes,
-    action
-)
-from rest_framework import status, mixins
-from rest_framework import viewsets, filters
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, mixins, status, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.pagination import LimitOffsetPagination
-from rest_framework.permissions import (
-    AllowAny,
-    IsAuthenticated,
-    IsAuthenticatedOrReadOnly,
-)
+from rest_framework.permissions import (AllowAny, IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
+from reviews.models import Category, Genre, Review, Title, User
 
-from reviews.models import (
-    Review,
-    Title,
-    Genre,
-    Category,
-    User,
-)
-from .send_mail import send_mail
 from .filters import FilterForTitle
+from .permissions import Admin, AdminOrReadOnly, ReadOrAuthorAndStaff
+from .send_mail import send_mail
+from .serializers import (AuthSerializer, CategorySerializer,
+                          CommentSerializer, GenreSerializer, ReviewSerializer,
+                          TitleGetSerializer, TitlePostSerializer,
+                          TokenSerializer, UserSerializer)
 from .tokens import get_tokens_for_user
-from .serializers import (
-    CommentSerializer,
-    ReviewSerializer,
-    GenreSerializer,
-    CategorySerializer,
-    TitleGetSerializer,
-    TitlePostSerializer,
-    AuthSerializer,
-    UserSerializer,
-    TokenSerializer
-)
-from .permissions import (
-    ReadOrAuthorAndStaff,
-    Admin,
-    AdminOrReadOnly
-)
 
 
 class ListDestroyCreateGenreCategoryViewSet(

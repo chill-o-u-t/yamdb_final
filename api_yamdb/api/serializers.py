@@ -1,15 +1,8 @@
 from django.core.validators import MaxValueValidator
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
-from reviews.models import (
-    Category,
-    Comment,
-    Genre,
-    Review,
-    Title,
-    User,
-    UsernameValidateMixin,
-)
+from reviews.models import (Category, Comment, Genre, Review, Title, User,
+                            UsernameValidateMixin)
 from reviews.utils import get_year
 
 

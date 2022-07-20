@@ -30,7 +30,8 @@ ____
 ```winpty docker-compose exec web python manage.py createsuperuser```
 
 ### Информация об образе на Dockerhub
-```nmm888/api_yamdb```
-### Информация об авторе
-Malik Nurmagomedov
-```https://github.com/yanmm888/```
+```chil1out/yamdb```
+### Информация об авторе проекта, кроме файла README
+Ivan Morozov
+
+
