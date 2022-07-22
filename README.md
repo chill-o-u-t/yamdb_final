@@ -6,7 +6,6 @@
 ____
 ##### Создание файла с переменными окружения .env
 Пример:
-- Ключ приложения ```SECRET_KEY='very_strong_secret_key'```
 - выбор движка СУБД ```DB_ENGINE=django.db.backends.postgresql```
 - название базы ```DB_NAME=postgres```
 - имя пользователя базы ```POSTGRES_USER=postgres```
